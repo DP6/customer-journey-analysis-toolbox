@@ -51,3 +51,4 @@ def channels_by_tp(df, j, ocurrencies, max_journey_size, separator = ' > '):
   df_result.iloc[:, [1, -1]] = df_result.iloc[:, [1, -1]].astype(int)
 
   return df_result
+  #teste
