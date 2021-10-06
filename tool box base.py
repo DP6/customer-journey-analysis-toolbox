@@ -53,3 +53,4 @@ def channels_by_tp(df, j, ocurrencies, max_journey_size, separator = ' > '):
   return df_result
   #teste
   #novo teste
+  # novo teste novo
