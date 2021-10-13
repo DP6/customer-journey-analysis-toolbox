@@ -1,6 +1,73 @@
 import pandas as pd
 
-class JAToolbox: 
+class JAToolbox:
+  """
+  A class to gather some methods often used in costumer journey analysis at DP6.
+  
+  Attributes
+  ----------
+  This class does not have any attribute.
+
+  Methods  
+  -------
+  get_size(j,separator = ' > ')
+    Calculates the number of touch points in a given journey.
+  
+  get_last_tp(j,separator = ' > ')
+    Calculates the number of touch points in a given journey.
+
+  get_first_tp(j,separator = ' > '):
+    Returns the first touch point of the journey.
+
+  get_nth_tp(j,n, separator = ' > '):
+    Returns the n_th touch point of the journey.
+
+  get_intermediate_tp(j,range, separator=' > '):    
+    Returns a subjourney formed by the touch points between the points
+    indicated in the range parameter.
+  
+  get_tps_counts(j,norm=False, separator = ' > '):
+    Returns how many times each distinct touch point occurres in the 
+    journey
+  
+  skip_tp(j,tp_to_skip, separator = ' > '):
+    Returns a transformed version of the journey, where all occurencies of a 
+    given touch point is skipped
+  
+  skip_tp_group(j,tps_to_skip, separator = ' > '):  
+    Returns a transformed version of the journey, where all occurencies of any 
+    element from a given group of touch points is skipped
+  
+  check_tp(j,tp_to_check,separator = ' > '):
+    Checks if there is any occurency of a indicated touch point in the journey.
+  
+  check_tp_group(j, tp_group_to_check, separator = ' > '):
+    Checks if there is any occurency of each touch indicated in a group of
+    touch points.
+  
+  get_tp_counts(j,tp, norm=False, separator = ' > '):
+    Returns how many occurrecies of a given touch_point there is in
+    the journey
+  
+  get_duration(timestamps,range=(0,-1)):
+    Returns the time interval between two indicated touch points in the journey.
+    By default the interval between the first and the last touch point.
+  
+  translate_tp(j,translation_dict,separator = ' > '):  
+    Returns a transformed version of the journey, where indicated touch
+    points are replaced by other values according to a traslation dictionary.
+  
+  get_transitions(self,j, count = True, norm=False, separator = ' > ', ):
+    Returns all the transitions between two touch points that occured in the
+    journey. If the optional parameter count is set to True, the occurency counts
+    for each transition is also returned.
+  
+  channels_by_tp(df, j, ocurrencies, max_journey_size, separator = ' > '):
+    How many times did each channel appear at each stage of the journeys.
+  
+  tps_by_channel(self,df,j,ocurrencies,separator = ' > '):
+    How many times each channel appeared on the journeys.
+  """  
   def __init__(self):
     pass
 
@@ -191,17 +258,17 @@ class JAToolbox:
     Uses the format 'tp_0 > tp_1 > tp_2 ... tp_n'.
     """  
     splitted_j = j.split(separator)
-    tps_to_remove = [x for x in set(tps_to_skip) if x in splitted_jor]
+    tps_to_remove = [x for x in set(tps_to_skip) if x in splitted_j]
     presence_check = len(tps_to_remove)>0
 
     if presence_check == True:
-      new_j = splitted_jor
+      new_j = splitted_j
       for tp in tps_to_remove:
         keep_tps = [x for x in new_j if x != tp]
         new_j = keep_tps
       result = ' > '.join(new_j)
     else:
-      result = jor
+      result = j
     return result
   
   def check_tp(self,j,tp_to_check,separator = ' > '):
