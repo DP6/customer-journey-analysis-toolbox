@@ -506,7 +506,14 @@ class JAToolbox:
       
     """
     
-    aux = df[j].apply(lambda x: Counter(x.split(separator)))
-    df_tps_counts = pd.DataFrame.from_dict(aux.sum(), orient='index').reset_index()
-    df_tps_counts.columns = ['Tp','Count']
+    def multiplicador(dicionario,valor):
+      for item in dicionario.keys():
+          dicionario[item] = dicionario[item]*valor
+      return dicionario
+
+    aux = df.copy()
+    aux['dict'] = aux[j].apply(lambda x: Counter(x.split(separator)))
+    aux['dict'] = aux.apply(lambda x: multiplicador(x['dict'],x[ocurrencies]), axis=1)
+    df_tps_counts = pd.DataFrame.from_dict(aux['dict'].sum(), orient='index').reset_index()
+    df_tps_counts.columns = ['Channel','Count']
     return df_tps_counts
