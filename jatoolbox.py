@@ -101,7 +101,7 @@ class JAToolbox:
     Returns: str. A string representing the first touch point of the journey
     given in j.
     """
-    splitted_j = j.split(' > ')
+    splitted_j = j.split(separator)
     result = splitted_j[0]
     return result
   
@@ -119,7 +119,7 @@ class JAToolbox:
     Returns: str. A string representing the last touch point of the journey
     given in j.
     """
-    splitted_j = j.split(' > ')
+    splitted_j = j.split(separator)
     result = splitted_j[-1]
     return result
 
