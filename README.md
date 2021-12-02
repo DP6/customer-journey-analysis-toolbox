@@ -68,18 +68,6 @@ df.head()
 
 <div>
 
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -179,19 +167,7 @@ intro_df
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -272,19 +248,7 @@ conv_df
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -468,19 +432,7 @@ trans_df.loc[trans_df['to']=='Referral'].sort_values(by='counts',ascending=False
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -662,19 +614,7 @@ df_agrupado = df_agrupado[['jornada','has_transaction']].groupby(['jornada','has
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -738,19 +678,7 @@ qtd_canais
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -833,7 +761,7 @@ sns.heatmap(data = df_heatmap, annot = True, fmt=".10g", cmap="YlGnBu")
 ![png](figures/output_50_1.png)
 
 
-##Tabela de funções presentes na Jatoolbox (Função vs. O que ela Faz)
+## Tabela de funções presentes na Jatoolbox (Função vs. O que ela Faz)
 
  Nome da Função ⚙|  Entradas 🚪|  Ação 🦾 
 -- | -- | --
