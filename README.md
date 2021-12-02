@@ -499,16 +499,6 @@ Podemos ver que os canais que mais transicionaram para Referral foram o próprio
 
 
 ```python
-# Perguntas como distribuição de tempo de jornada
-# Será que tem canais que fazem o cliente "avançar mais rápido"?
-
-# Duração médias das jornadas: boxplot
-# Relação entre duracão x tempo, duração x receita
-# Duração média de cada canal
-```
-
-
-```python
 def tempo_do_canal(lista):
   for itens in range(len(lista)):
     if itens != len(lista)-1:
