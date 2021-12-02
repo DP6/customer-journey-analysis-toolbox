@@ -52,10 +52,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # por enquanto nossa biblioteca não é pública, logo, a base também não é pública e fica impossível de acessar ela
-# base = 'https://raw.githubusercontent.com/DP6/customer-journey-analysis-toolbox/main/base_demonstracao.csv?token=ATC3AU2LXPVSV6B5F6G3GU3BRF35G'
+base = 'https://raw.githubusercontent.com/DP6/customer-journey-analysis-toolbox/main/base_demonstracao.csv?token=ATC3AU2LXPVSV6B5F6G3GU3BRF35G'
 # por isso adotaremos um link temporário
 
-link_temporario = 'https://raw.githubusercontent.com/g-ribs/Bases_publicas/main/base_de_jornadas.csv'
+#link_temporario = 'https://raw.githubusercontent.com/g-ribs/Bases_publicas/main/base_de_jornadas.csv'
 df = pd.read_csv(link_temporario, index_col=0)
 df.reset_index(inplace = True)
 
